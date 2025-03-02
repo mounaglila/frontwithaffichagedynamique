@@ -1,0 +1,16 @@
+<p>affichage works!</p>
+<div *ngFor="let table of tables">
+  <h3>{{ table }}</h3> <!-- Nom de la table -->
+  <table border="1">
+    <thead>
+      <tr>
+        <th *ngFor="let column of getColumns(table)">{{ column }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of dataMap[table]">
+        <td *ngFor="let column of getColumns(table)">{{ row[column] }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
